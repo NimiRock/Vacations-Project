@@ -1,0 +1,13 @@
+packages:
+create-react-app
+react-router-dom
+react-dom
+redux
+react-redux
+
+signup:
+form ==>
+first name
+last name
+username
+password
