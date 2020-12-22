@@ -22,7 +22,6 @@ export default function Navbar() {
 		}
 	};
 
-
 	useEffect(() => {
 		showButton();
 	}, []);
@@ -74,9 +73,7 @@ export default function Navbar() {
 							</li>
 						)}
 					</ul>
-					{button && <Button buttonStyle="btn--outline">
-            {user.login ? `Welcome ${user.userFName}` : "SIGN UP"}
-            </Button>}
+					{button && <Button buttonStyle="btn--outline">{user.login ? `Welcome ${user.userFName}` : "SIGN UP"}</Button>}
 				</div>
 			</nav>
 		</>

@@ -131,7 +131,7 @@ export default function ForgotPassword() {
 			</form>
 
 			<div className="login-and-reset-btns d-flex justify-content-around w-25">
-				<Button className={classes.backBtn} color=""  variant="contained" to="/login" component={Link}>
+				<Button className={classes.backBtn}  variant="contained" to="/login" component={Link}>
 					Back to login
 				</Button>
 				<Button

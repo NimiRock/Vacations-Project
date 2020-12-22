@@ -104,7 +104,6 @@ export default function Login() {
 							type={showPassword ? "text" : "password"}
 							value={loginPassword}
 							error={!loginPassword && showOrHideErrorMessage}
-							helperText={!loginPassword && showOrHideErrorMessage && "Please enter a valid password"}
 							required
 							onChange={(e) => setLoginPassword(e.target.value)}
 							endAdornment={

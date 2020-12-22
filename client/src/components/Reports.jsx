@@ -33,7 +33,7 @@ export default function Reports() {
 	};
 
 	return (
-		<div className="services">
+		<div className="reports-chart">
 			<VictoryChart theme={VictoryTheme.material} domainPadding={15} height={150}>
 				<VictoryAxis
 					style={{

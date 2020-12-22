@@ -6,18 +6,18 @@
   scroll-behavior: smooth;
 }
 
-.services,
-.products
+.reports-chart,
+.about-section
 /*.sign-up*/ {
   margin: 0;
   display: flex;
   min-height: 91vh;
   align-items: center;
   justify-content: center;
-  font-size: 3rem;
+  // font-size: 3rem;
 }
 
-.services {
+.reports-chart {
   background-image: url("/images/img-7.jpg");
   background-position: center;
   background-size: cover;
@@ -26,14 +26,19 @@
   font-size: 100px;
 }
 
-.products {
-  background-image: url("/images/img-1.jpg");
+.about-section {
+  background-image: url("/images/img-home.jpg");
   background-position: center;
   background-size: fill;
   background-repeat: no-repeat;
   color: #fff;
-  font-size: 100px;
+  // font-size: 100px;
 }
+
+.myImgItself {
+  width: 400px;
+}
+
 
 .sign-up, .log-in, .forgot-password {
   background-image: url("/images/img-9.jpg");
