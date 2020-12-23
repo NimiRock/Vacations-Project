@@ -111,7 +111,7 @@ export default function ForgotPassword() {
 				</div>
 				<div>
 					<FormControl className={`MuiTextField-root ${classes.usernameAndPassword}`} variant="outlined">
-						<InputLabel htmlFor="outlined-adornment-password">Password *</InputLabel>
+						<InputLabel htmlFor="outlined-adornment-password">New Password *</InputLabel>
 						<OutlinedInput
 							id="outlined-adornment-password"
 							type={showPassword ? "text" : "password"}
