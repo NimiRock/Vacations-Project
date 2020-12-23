@@ -6,15 +6,16 @@
   scroll-behavior: smooth;
 }
 
-.reports-chart,
-.about-section
-/*.sign-up*/ {
+.navbar-logo:hover {
+  text-decoration: none;
+}
+
+.reports-chart {
   margin: 0;
   display: flex;
   min-height: 91vh;
   align-items: center;
   justify-content: center;
-  // font-size: 3rem;
 }
 
 .reports-chart {
@@ -25,20 +26,6 @@
   color: #fff;
   font-size: 100px;
 }
-
-.about-section {
-  background-image: url("/images/img-home.jpg");
-  background-position: center;
-  background-size: fill;
-  background-repeat: no-repeat;
-  color: #fff;
-  // font-size: 100px;
-}
-
-.myImgItself {
-  width: 400px;
-}
-
 
 .sign-up, .log-in, .forgot-password {
   background-image: url("/images/img-9.jpg");

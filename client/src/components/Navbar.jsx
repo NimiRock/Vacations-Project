@@ -39,11 +39,11 @@ export default function Navbar() {
 						<i className={click ? "fas fa-times" : "fas fa-bars"}></i>
 					</div>
 					<ul className={click ? "nav-menu active" : "nav-menu"}>
-						<li className="nav-item">
-							<NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
-								Home
-							</NavLink>
-						</li>
+							<li className="nav-item">
+								<NavLink to="/" className="nav-links" onClick={closeMobileMenu}>
+									Home
+								</NavLink>
+							</li>
 						{user.login && user.userRole === "admin" && (
 							<li className="nav-item">
 								<NavLink to="/reports" className="nav-links" onClick={closeMobileMenu}>
@@ -52,11 +52,6 @@ export default function Navbar() {
 							</li>
 						)}
 
-						<li className="nav-item">
-							<NavLink to="/about" className="nav-links" onClick={closeMobileMenu}>
-								About
-							</NavLink>
-						</li>
 						{user.login && (
 							<li className="nav-item">
 								<NavLink

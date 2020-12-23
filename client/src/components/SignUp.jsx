@@ -68,7 +68,6 @@ export default function SignUp() {
 				}),
 			});
 			const data = await res.json();
-			console.log(data);
 			if (!data.err) {
 				await userLogin();
 				setShowOrHideErrorMessage(false);
@@ -81,9 +80,6 @@ export default function SignUp() {
 				setUsernameTaken(true)
 			}
 
-			/**
-			 * TODO - This is where I need to enter signup error, like username is already taken
-			 */
 		} catch (error) {
 			console.log(error);
 		}
@@ -110,9 +106,6 @@ export default function SignUp() {
 				})
 			);
 			dispatch(isUserLoggedIn(data));
-			/**
-			 * Todo - This is where I need to enter an error message if login information is incorrect
-			 */
 		} catch (error) {
 			console.log(error);
 		}
@@ -122,6 +115,7 @@ export default function SignUp() {
 		<div className="d-flex justify-content-center align-items-center flex-column sign-up">
 			<h1 className="display-2 signup-header">Sign Up to TRVL</h1>
 			{usernameTaken && <h3 className="invalid-login-entry-error">Username already exist</h3>}
+			{showOrHideErrorMessage && <h3 className="invalid-login-entry-error">Please fill all fields</h3>}
 			<form className={classes.root} noValidate autoComplete="off">
 				<div>
 					<TextField
@@ -191,6 +185,7 @@ export default function SignUp() {
 				color="primary"
 				onClick={async () => {
 					if ((registrationFirstName, registrationLastName, registrationUsername, registrationPassword)) {
+						setShowOrHideErrorMessage(false);
 						await signUp();
 					} else {
 						setShowOrHideErrorMessage(true);

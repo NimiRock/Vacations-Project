@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Reports from "./components/Reports";
-import About from "./components/About";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import Cards from "./components/Cards";
@@ -54,7 +53,6 @@ export default function App() {
 				<Switch>
 					<Route path="/" exact component={user.login ? Cards : HeroSection} />
 					<Route path="/reports" component={Reports} />
-					<Route path="/about" component={About} />
 					<Route path="/sign-up" render={() => (user.login ? <Redirect to="/" /> : <SignUp />)} />
 					<Route path="/login" render={() => (user.login ? <Redirect to="/" /> : <Login />)} />
 					<Route path="/forgot-pwd" render={() => (user.login ? <Redirect to="/" /> : <ForgotPassword />)} />

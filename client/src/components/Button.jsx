@@ -22,4 +22,3 @@ export default function Button({ children, buttonStyle, buttonSize, className })
         </>
     )
 }
-// smooth={true}

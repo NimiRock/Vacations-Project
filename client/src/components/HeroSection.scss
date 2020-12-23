@@ -1,11 +1,3 @@
-video {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    z-index: -1;
-};
-
 .hero-container {
     background: url('/images/img-home.jpg') center center/cover no-repeat;
     height: 100vh;
@@ -33,7 +25,7 @@ video {
 
 .hero-btns {
     margin-top: 32px;
-    // display: flex;
+    display: flex;
 };
 
 .hero-btns .btn {

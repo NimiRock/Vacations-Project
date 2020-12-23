@@ -64,9 +64,6 @@
   border-radius: 10px;
   overflow: hidden;
   text-decoration: none;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .cards__item__pic-wrap {

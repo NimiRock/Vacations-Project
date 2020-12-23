@@ -83,6 +83,7 @@ export default function Login() {
 		<div className={`d-flex justify-content-center align-items-center flex-column log-in`}>
 			<h1 className="display-2 login-header">Login to TRVL</h1>
 			{invalidLoginEntry && <h3 className="invalid-login-entry-error">Username or Password are incorrect</h3>}
+			{showOrHideErrorMessage && <h3 className="invalid-login-entry-error">Please fill all fields</h3>}
 			<form className={classes.root} noValidate autoComplete="off">
 				<div>
 					<TextField

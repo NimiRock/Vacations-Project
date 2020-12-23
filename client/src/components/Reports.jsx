@@ -13,6 +13,7 @@ export default function Reports() {
 		// eslint-disable-next-line
 	}, []);
 
+
 	const getChartDataFromServer = async () => {
 		try {
 			const res = await fetch("http://localhost:1000/vacations/chart-data", {

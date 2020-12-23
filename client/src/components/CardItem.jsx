@@ -37,6 +37,7 @@ export default function CardItem({
 	const user = useSelector((state) => state.isUserLoggedIn);
 	const getLocalStorageUserInformation = JSON.parse(localStorage.getItem("token"));
 
+	//* This function handles deleteion of a vacation, with any follows
 	const deleteVacation = async () => {
 		try {
 			await fetch(`http://localhost:1000/vacations/${vacation.vacation_id}`, {
@@ -52,9 +53,6 @@ export default function CardItem({
 			});
 			const data = await res.json();
 			dispatch(allVacations(data.vacations));
-			if (data.err) {
-				console.log(data);
-			}
 		} catch (error) {
 			console.log(error);
 		}

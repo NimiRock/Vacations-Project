@@ -66,8 +66,8 @@ export default function Cards() {
 		// eslint-disable-next-line
 	}, [vacations]);
 
-	//*============================== Main Functions
 
+	//*============================== Main Functions
 	const handleOpen = () => {
 		setOpen(true);
 	};
@@ -179,6 +179,7 @@ export default function Cards() {
 		});
 	};
 
+	//* This function handles edit vacation
 	const editVacation = async () => {
 		try {
 			await fetch(`http://localhost:1000/vacations/${vacationID}`, {
@@ -203,9 +204,6 @@ export default function Cards() {
 			});
 			const data = await res.json();
 			dispatch(allVacations(data.vacations));
-			if (data.err) {
-				console.log(data);
-			}
 		} catch (error) {
 			console.log(error);
 		}

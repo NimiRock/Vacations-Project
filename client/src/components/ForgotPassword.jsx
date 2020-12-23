@@ -43,6 +43,8 @@ export default function ForgotPassword() {
 	const [resetPwdUserUsername, setResetPwdUserUsername] = useState("");
 	const [resetPwdNewPassword, setResetPwdNewPassword] = useState("");
 	const [showOrHideErrorMessage, setShowOrHideErrorMessage] = useState(false);
+	const [invalidLoginEntry, setInvalidLoginEntry] = useState(false);
+	const [pwdChangedSuccessfully, setPwdChangedSuccessfully] = useState(false)
 	const [showPassword, setShowPassword] = useState(false);
 	const classes = useStyles();
 
@@ -64,10 +66,14 @@ export default function ForgotPassword() {
 				}),
 			});
 			const data = await res.json();
-			console.log(data);
-			/**
-			 * TODO - This is where I need to enter signup error, like username is already taken
-			 */
+			if(data.err){
+				setInvalidLoginEntry(true);
+			}else{
+				setResetPwdUserLastName("");
+				setResetPwdUserUsername("");
+				setResetPwdNewPassword("");
+				setPwdChangedSuccessfully(true);
+			}
 		} catch (error) {
 			console.log(error);
 		}
@@ -76,6 +82,9 @@ export default function ForgotPassword() {
 	return (
 		<div className="d-flex justify-content-center align-items-center flex-column forgot-password">
 			<h1 className="display-2 reset-header">Reset Password</h1>
+			{pwdChangedSuccessfully && <h3 className="text-success">Password changed successfully, you can now log in</h3>}
+			{invalidLoginEntry && <h3 className="invalid-login-entry-error">Username or last name are incorrect</h3>}
+			{showOrHideErrorMessage && <h3 className="invalid-login-entry-error">Please fill all fields</h3>}
 			<form className={classes.root} noValidate autoComplete="off">
 				<div>
 					<TextField
@@ -141,9 +150,6 @@ export default function ForgotPassword() {
 						if ((resetPwdUserLastName, resetPwdUserUsername, resetPwdNewPassword)) {
 							await passwordReset();
 							setShowOrHideErrorMessage(false);
-							setResetPwdUserLastName("");
-							setResetPwdUserUsername("");
-							setResetPwdNewPassword("");
 						} else {
 							setShowOrHideErrorMessage(true);
 						}
