@@ -4,6 +4,7 @@ const bcrypt = require("bcrypt");
 const Query = require("../dbconfig");
 const { everyUser } = require("../verification");
 
+// -------THIS FUNCTION HANDLES LOGINS--------------------
 router.post("/login", async (req, res) => {
   const users = await Query(
     `SELECT user_id, user_username, user_password, user_role, user_fname FROM users`
@@ -40,6 +41,8 @@ router.post("/login", async (req, res) => {
   res.json({ err: false, access_token, refresh_token, user });
 });
 
+
+// -------THIS FUNCTION HANDLES REGISTRATION----------------
 router.post("/register", async (req, res) => {
   const select_q = `SELECT user_username FROM users`;
   const users = await Query(select_q);
@@ -60,6 +63,8 @@ router.post("/register", async (req, res) => {
   }
 });
 
+
+// -------THIS FUNCTION HANDLES PASSWORD RESET IF THE USER FORGOT-----------
 router.put("/reset-pwd", async (req, res) => {
   const users = await Query(
     `SELECT user_id, user_username, user_password, user_lname FROM users`
@@ -68,11 +73,8 @@ router.put("/reset-pwd", async (req, res) => {
   if (!lname || !password || !username)
     return res.status(400).json({ err: true, message: "missing some info" });
   const user = users.find((u) => u.user_username == username)
-  console.log(user)
-  if (!user.user_lname == lname)
-    return res
-      .status(400)
-      .json({ err: true, message: "last name is incorrect" });
+  if(!user) return res.status(400).json({err: true, message: "username not found"})
+  if (!(user.user_lname == lname)) return res.status(400).json({ err: true, message: "last name is incorrect" });
   const hash = await bcrypt.hash(password, 10);
   try {
     const insert_q = `UPDATE users
@@ -85,6 +87,8 @@ router.put("/reset-pwd", async (req, res) => {
   }
 });
 
+
+// -------THIT FUNCTION HANDLES REFRESH TOKEN------------
 router.get("/refresh", everyUser, async (req, res) => {
   const users = await Query(`SELECT * FROM users`);
   const refresh_token = req.headers.authorization;
