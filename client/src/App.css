@@ -11,8 +11,7 @@
   text-decoration: none;
 }
 
-.reports-chart,
-.about-section {
+.reports-chart {
   margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,41 +26,12 @@
 }
 
 .reports-chart {
-  background-image: url("/images/img-7.jpg");
+  background-image: url("/images/img-8.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
-}
-
-.about-section {
-  background: url("/images/img-home.jpg") center center/cover no-repeat;
-  height: 100vh;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-shadow: inset 0 0 0 1000px tgba(0, 0, 0, 0.2);
-          box-shadow: inset 0 0 0 1000px tgba(0, 0, 0, 0.2);
-  -o-object-fit: contain;
-     object-fit: contain;
-  color: #802424;
-  font-size: 20px;
-}
-
-.myImgItself {
-  width: 400px;
 }
 
 .sign-up, .log-in, .forgot-password {
