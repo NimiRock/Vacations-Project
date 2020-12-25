@@ -13,4 +13,6 @@ app.use(express.static("public"));
 app.use('/auth', require('./routes/auth&credentials'));
 app.use('/vacations', require('./routes/vacations'));
 
+
+
 app.listen(port, () => console.log('up & running'));
