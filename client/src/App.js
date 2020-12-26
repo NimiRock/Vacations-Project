@@ -25,7 +25,7 @@ export default function App() {
 	}, []);
 
 	const getUserData = async () => {
-		const res = await fetch("http://localhost:1000/auth/refresh", {
+		const res = await fetch("https://mighty-wildwood-99145.herokuapp.com/auth/refresh", {
 			method: "GET",
 			headers: {
 				authorization: localStorageUserData.refresh_token,

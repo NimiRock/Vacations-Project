@@ -40,13 +40,13 @@ export default function CardItem({
 	//* This function handles deleteion of a vacation, with any follows
 	const deleteVacation = async () => {
 		try {
-			await fetch(`http://localhost:1000/vacations/${vacation.vacation_id}`, {
+			await fetch(`https://mighty-wildwood-99145.herokuapp.com/vacations/${vacation.vacation_id}`, {
 				method: "DELETE",
 				headers: {
 					authorization: getLocalStorageUserInformation.refresh_token,
 				},
 			});
-			const res = await fetch("http://localhost:1000/vacations", {
+			const res = await fetch("https://mighty-wildwood-99145.herokuapp.com/vacations", {
 				headers: {
 					authorization: getLocalStorageUserInformation.access_token,
 				},

@@ -54,7 +54,7 @@ export default function ForgotPassword() {
 
 	const passwordReset = async () => {
 		try {
-			const res = await fetch("http://localhost:1000/auth/reset-pwd", {
+			const res = await fetch("https://mighty-wildwood-99145.herokuapp.com/auth/reset-pwd", {
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",

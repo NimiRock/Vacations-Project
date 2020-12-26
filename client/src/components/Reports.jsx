@@ -16,7 +16,7 @@ export default function Reports() {
 
 	const getChartDataFromServer = async () => {
 		try {
-			const res = await fetch("http://localhost:1000/vacations/chart-data", {
+			const res = await fetch("https://mighty-wildwood-99145.herokuapp.com/vacations/chart-data", {
 				method: "GET",
 				headers: {
 					authorization: getLocalStorageUserInformation.access_token,
