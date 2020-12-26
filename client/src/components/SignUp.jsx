@@ -55,7 +55,7 @@ export default function SignUp() {
 
 	const signUp = async () => {
 		try {
-			const res = await fetch("https://mighty-wildwood-99145.herokuapp.com/auth/register", {
+			const res = await fetch("/auth/register", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -87,7 +87,7 @@ export default function SignUp() {
 
 	const userLogin = async () => {
 		try {
-			const res = await fetch("https://mighty-wildwood-99145.herokuapp.com/auth/login", {
+			const res = await fetch("/auth/login", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",

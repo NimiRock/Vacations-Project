@@ -79,7 +79,7 @@ export default function Cards() {
 	//* This function get all the vacations. It's mainly used for useEffect to render if the admin add a new vacation
 	const getAllVacations = async () => {
 		if (getLocalStorageUserInformation) {
-			const res = await fetch("https://mighty-wildwood-99145.herokuapp.com/vacations", {
+			const res = await fetch("/vacations", {
 				headers: {
 					authorization: getLocalStorageUserInformation.access_token,
 				},
@@ -94,7 +94,7 @@ export default function Cards() {
 
 	//* This function get the vacations that the user follow
 	const getFollowedVacations = async () => {
-		const res = await fetch("https://mighty-wildwood-99145.herokuapp.com/vacations/following", {
+		const res = await fetch("/vacations/following", {
 			method: "GET",
 			headers: {
 				authorization: getLocalStorageUserInformation.access_token,
@@ -106,7 +106,7 @@ export default function Cards() {
 
 	//* This function get the tables combination of vacations and follow table, and filter the vacations the user is following
 	const getVacationsThatAreNotFollowed = async () => {
-		const res = await fetch("https://mighty-wildwood-99145.herokuapp.com/vacations/not-following", {
+		const res = await fetch("/vacations/not-following", {
 			method: "GET",
 			headers: {
 				authorization: getLocalStorageUserInformation.access_token,
@@ -120,7 +120,7 @@ export default function Cards() {
 
 	//* This function handles the follow button
 	const followAVacation = async (vacation_id) => {
-		const res = await fetch("https://mighty-wildwood-99145.herokuapp.com/vacations/follow", {
+		const res = await fetch("/vacations/follow", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -141,7 +141,7 @@ export default function Cards() {
 
 	//* This function handles the unfollow button
 	const unFollowVacation = async (vacation_id) => {
-		const res = await fetch("https://mighty-wildwood-99145.herokuapp.com/vacations/stop-follow", {
+		const res = await fetch("/vacations/stop-follow", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -162,7 +162,7 @@ export default function Cards() {
 
 	//* This function add a new vacation
 	const addVacation = async () => {
-		await fetch("https://mighty-wildwood-99145.herokuapp.com/vacations/", {
+		await fetch("/vacations/", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -182,7 +182,7 @@ export default function Cards() {
 	//* This function handles edit vacation
 	const editVacation = async () => {
 		try {
-			await fetch(`https://mighty-wildwood-99145.herokuapp.com/vacations/${vacationID}`, {
+			await fetch(`/vacations/${vacationID}`, {
 				method: "PUT",
 				headers: {
 					"Content-Type": "application/json",
@@ -197,7 +197,7 @@ export default function Cards() {
 					img_url: vacationImgURL,
 				}),
 			});
-			const res = await fetch("https://mighty-wildwood-99145.herokuapp.com/vacations", {
+			const res = await fetch("/vacations", {
 				headers: {
 					authorization: getLocalStorageUserInformation.access_token,
 				},
