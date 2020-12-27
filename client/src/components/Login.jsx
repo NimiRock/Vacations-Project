@@ -22,9 +22,6 @@ const useStyles = makeStyles((theme) => ({
 			backgroundColor: "rgba(241, 250, 238, 0.7)",
 		},
 	},
-	usernameAndPassword: {
-		width: 460,
-	},
 	margin: {
 		margin: theme.spacing(1),
 	},
@@ -32,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 		marginTop: theme.spacing(3),
 	},
 	submitLoginBtn: {
-		width: 200,
+		width: 100,
 	},
 }));
 
@@ -81,13 +78,12 @@ export default function Login() {
 
 	return (
 		<div className={`d-flex justify-content-center align-items-center flex-column log-in`}>
-			<h1 className="display-2 login-header">Login to TRVL</h1>
+			<h1 className="login-header">Login to TRVL</h1>
 			{invalidLoginEntry && <h3 className="invalid-login-entry-error">Username or Password are incorrect</h3>}
 			{showOrHideErrorMessage && <h3 className="invalid-login-entry-error">Please fill all fields</h3>}
 			<form className={classes.root} noValidate autoComplete="off">
 				<div>
 					<TextField
-						className={classes.usernameAndPassword}
 						id="outlined-error"
 						label="Username"
 						error={!loginUsername && showOrHideErrorMessage}
@@ -98,7 +94,7 @@ export default function Login() {
 					/>
 				</div>
 				<div>
-					<FormControl className={`MuiTextField-root ${classes.usernameAndPassword}`} variant="outlined">
+					<FormControl className="MuiTextField-root" variant="outlined">
 						<InputLabel htmlFor="outlined-adornment-password">Password *</InputLabel>
 						<OutlinedInput
 							id="outlined-adornment-password outlined-error"
@@ -143,7 +139,7 @@ export default function Login() {
 			>
 				Login
 			</Button>
-			<div className="signup-passReset-links d-flex justify-content-between w-25 mt-5">
+			<div className="signup-passReset-links d-flex justify-content-around w-25 mt-5">
 				<Link className="sign-up-link" to="/sign-up">
 					Not a member yet? REGISTER HERE
 				</Link>

@@ -23,17 +23,14 @@ const useStyles = makeStyles((theme) => ({
 			backgroundColor: "rgba(241, 250, 238, 0.7)",
 		},
 	},
-	usernameAndPassword: {
-		width: 460,
-	},
 	margin: {
 		margin: theme.spacing(1),
 	},
 	withoutLabel: {
 		marginTop: theme.spacing(3),
 	},
-	submitLoginBtn: {
-		width: 200,
+	submitSignUpBtn: {
+		width: 100,
 	},
 }));
 
@@ -139,7 +136,6 @@ export default function SignUp() {
 				</div>
 				<div>
 					<TextField
-						className={classes.usernameAndPassword}
 						id="outlined-error"
 						label="Username"
 						variant="outlined"
@@ -150,7 +146,7 @@ export default function SignUp() {
 					/>
 				</div>
 				<div>
-					<FormControl className={`MuiTextField-root ${classes.usernameAndPassword}`} variant="outlined">
+					<FormControl className="MuiTextField-root" variant="outlined">
 						<InputLabel htmlFor="outlined-adornment-password">Password *</InputLabel>
 						<OutlinedInput
 							id="outlined-adornment-password"
@@ -180,7 +176,7 @@ export default function SignUp() {
 			</form>
 
 			<Button
-				className={`${classes.submitLoginBtn} mb-3`}
+				className={`${classes.submitSignUpBtn} mb-3`}
 				variant="contained"
 				color="primary"
 				onClick={async () => {

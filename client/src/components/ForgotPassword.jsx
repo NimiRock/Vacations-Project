@@ -20,9 +20,6 @@ const useStyles = makeStyles((theme) => ({
 			backgroundColor: "rgba(241, 250, 238, 0.7)",
 		},
 	},
-	usernameAndPassword: {
-		width: 460,
-	},
 	margin: {
 		margin: theme.spacing(1),
 	},
@@ -81,7 +78,7 @@ export default function ForgotPassword() {
 
 	return (
 		<div className="d-flex justify-content-center align-items-center flex-column forgot-password">
-			<h1 className="display-2 reset-header">Reset Password</h1>
+			<h1 className="reset-header">Reset Password</h1>
 			{pwdChangedSuccessfully && <h3 className="text-success">Password changed successfully, you can now log in</h3>}
 			{invalidLoginEntry && <h3 className="invalid-login-entry-error">Username or last name are incorrect</h3>}
 			{showOrHideErrorMessage && <h3 className="invalid-login-entry-error">Please fill all fields</h3>}
@@ -99,7 +96,6 @@ export default function ForgotPassword() {
 				</div>
 				<div>
 					<TextField
-						className={classes.usernameAndPassword}
 						id="outlined-error"
 						label="Username"
 						variant="outlined"
@@ -110,7 +106,7 @@ export default function ForgotPassword() {
 					/>
 				</div>
 				<div>
-					<FormControl className={`MuiTextField-root ${classes.usernameAndPassword}`} variant="outlined">
+					<FormControl className="MuiTextField-root" variant="outlined">
 						<InputLabel htmlFor="outlined-adornment-password">New Password *</InputLabel>
 						<OutlinedInput
 							id="outlined-adornment-password"
@@ -161,3 +157,5 @@ export default function ForgotPassword() {
 		</div>
 	);
 }
+
+// ${classes.usernameAndPassword}`}

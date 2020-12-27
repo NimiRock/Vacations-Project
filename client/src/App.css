@@ -46,6 +46,7 @@
 .login-header, .signup-header, .reset-header {
   font-family: 'Langar', cursive;
   color: #388b28;
+  font-size: 4rem;
 }
 
 .sign-up-link, .forgot-pwd-link, .login-link {
