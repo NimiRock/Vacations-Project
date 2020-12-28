@@ -141,7 +141,7 @@ export default function Login() {
 			</Button>
 			<div className="signup-passReset-links d-flex justify-content-around w-25 mt-5">
 				<Link className="sign-up-link" to="/sign-up">
-					Not a member yet? REGISTER HERE
+					Not a member yet? REGISTER
 				</Link>
 				<Link className="forgot-pwd-link" to="/forgot-pwd">
 					Forgot Password?

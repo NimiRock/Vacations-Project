@@ -191,7 +191,7 @@ export default function SignUp() {
 				Register
 			</Button>
 			<Link className="login-link" to="/login">
-				Already a member? Click here to login
+				Already a member? LOGIN
 			</Link>
 		</div>
 	);
