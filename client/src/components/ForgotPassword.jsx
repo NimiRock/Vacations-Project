@@ -144,6 +144,7 @@ export default function ForgotPassword() {
 					color="primary"
 					onClick={async () => {
 						if ((resetPwdUserLastName, resetPwdUserUsername, resetPwdNewPassword)) {
+							setInvalidLoginEntry(false)
 							await passwordReset();
 							setShowOrHideErrorMessage(false);
 						} else {
